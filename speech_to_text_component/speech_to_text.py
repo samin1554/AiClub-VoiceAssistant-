@@ -80,7 +80,13 @@ def transcribe_recoding(filename):
         return transcribe
     except Exception as e:
         print(f" ERror {e}")
-        return '' 
+        return ''
+
+#  saving transcribed text
+def save_transcripted_text(text):
+    with open("transcribed_subject.txt", "w", encoding="utf-8") as f:
+        f.write(text)
+    print("Transcript saved to transcribed_subject.txt")
     
     
 def main():
@@ -89,6 +95,10 @@ def main():
         text = transcribe_recoding(AUDIO_FILE)
         if text:
             print(f"Transcribed audio : {text}")
+
+            #  saving txt file
+
+            save_transcripted_text(text)
             return text
         else: 
             print(f'transcribe failure')
