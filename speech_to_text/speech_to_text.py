@@ -84,9 +84,13 @@ def transcribe_recoding(filename):
 
 #  saving transcribed text
 def save_transcripted_text(text):
-    with open("transcribed_subject.txt", "w", encoding="utf-8") as f:
+    # Save to project root (one level up from this script)
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(current_dir, "../transcribed_subject.txt")
+    
+    with open(file_path, "w", encoding="utf-8") as f:
         f.write(text)
-    print("Transcript saved to transcribed_subject.txt")
+    print(f"Transcript saved to {file_path}")
     
     
 def main():
@@ -115,6 +119,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
-        
-        
