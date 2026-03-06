@@ -10,7 +10,7 @@ A voice-controlled AI assistant using:
 ### 1. Install Dependencies
 
 ```powershell
-cd C:\Users\Alyso\Projects\jarvis
+cd <YOUR_JARVIS_PROJECT_LOCATION>
 pip install -r requirements.txt
 ```
 
